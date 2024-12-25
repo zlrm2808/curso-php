@@ -14,33 +14,46 @@ curl_close($ch);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
 </head>
-
-<div style="background: #111111;"> 
-  <header style="text-align: center;">
+<main>
+  <header>
     <h1>¿Cuando el la Próxima Película del UCM?</h1>
   </header>
-</div>
 
-<main>
-  <hgroup style="text-align: center;">
-    <h2><?= $data["title"]; ?> se estrena en <i><?= $data["days_until"]; ?> días</i>!</h2>
-    <p>Fecha de estreno: <?= $data["release_date"]; ?></p>
-    <p>Cual es la siguiente? <?= $data["following_production"]["title"]; ?></p>
-  </hgroup>
-  <section>
-    <img 
-      src="<?= $data["poster_url"] ?>" width="300" alt="Poster de <?= $data["title"]; ?>"
-      style = "border-radius: 15px;"
-      >
-  </section>
+  <body>
+    <hgroup style="text-align: center;">
+      <h2><?= $data["title"]; ?> se estrena en <i><?= $data["days_until"]; ?> días</i>!</h2>
+      <p>Fecha de estreno: <?= $data["release_date"]; ?></p>
+      <p>Cual es la siguiente? <?= $data["following_production"]["title"]; ?></p>
+    </hgroup>
+    <section>
+      <img 
+        src="<?= $data["poster_url"] ?>" width="300" alt="Poster de <?= $data["title"]; ?>"
+        style = "border-radius: 15px;"
+        >
+      </section>
+  </body>
 </main>
 
 <style>
-  :root {
-    color-scheme: light dark;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    height: 100px !important;
+    width: 100% !important;
+    text-align: center;
+    background: #444;
   }
 
   body {
+    color-scheme: light dark;
     display: grid;
     place-content: center;
   }
