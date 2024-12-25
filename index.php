@@ -1,10 +1,10 @@
 <?php
-const API_URL = "https://whenisthenextmcufilm.com/api";
-$ch = curl_init(API_URL);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
-$data = json_decode($response, true);
-curl_close($ch);
+  const API_URL = "https://whenisthenextmcufilm.com/api";
+  $ch = curl_init(API_URL);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $response = curl_exec($ch);
+  $data = json_decode($response, true);
+  curl_close($ch);
 ?>
 
 <head>
